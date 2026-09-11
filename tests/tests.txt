@@ -1,0 +1,49 @@
+# Tests
+
+## Test 1 - Open pending requests from the dashboard KPI and resolve one [sanity]
+Viewport: desktop
+Covers: clickable dashboard KPI navigation, request queue navigation, request acceptance, request-count update
+Description: Verifies the dispatcher can go directly from a summary number to the operational list and resolve an item.
+
+Steps:
+1. Click the dashboard card labeled "PRIJAVE NA ČEKANJU"
+2. Click "Potvrdi" on the Marija Jovanović request
+3. Observe the request list and request badge
+
+Expected: The Prijave view opens directly, Marija Jovanović is removed from the pending list, and the pending request count changes from 3 to 2.
+
+## Test 2 - Use dashboard shortcuts and return with Nazad
+Viewport: desktop
+Covers: clickable dashboard KPI shortcuts, previous-view history, back navigation
+Description: Verifies the dispatcher can open operational sections from summary cards and return to the previous screen without searching the navigation.
+
+Steps:
+1. From Početna click "DANAS PUTNIKA", then click "Nazad"
+2. Click "ZA NAPLATU", then click "Nazad"
+3. Click the "VOZILA" warning card, then click "Nazad"
+
+Expected: The cards open Ture, Finansije, and Vozila respectively, and every "Nazad" action returns to Početna.
+
+## Test 3 - Open and save a quick entry on mobile
+Viewport: mobile
+Covers: responsive dashboard, quick-entry modal, mobile form interaction, save confirmation
+Description: Verifies the primary quick-entry action remains usable on a phone-sized screen.
+
+Steps:
+1. Tap the plus button in the top-right corner
+2. Enter a name and phone number in the quick-entry form
+3. Tap "Sačuvaj"
+
+Expected: The modal closes and a visible confirmation says the entry was saved in the prototype.
+
+## Test 4 - Submit the public passenger request preview
+Viewport: mobile
+Covers: public passenger flow, trip selection, required-field validation, successful form completion
+Description: Verifies the passenger-facing request preview can progress from trip selection to a successful request state.
+
+Steps:
+1. Open "Javna prijava" using navigation, then tap "Izaberi ovu turu"
+2. Enter an ime i prezime and a phone number
+3. Tap "Nastavi na potvrdu broja"
+
+Expected: A success card appears stating that the request is ready and that a real app would send an SMS code.
