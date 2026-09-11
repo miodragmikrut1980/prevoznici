@@ -1,0 +1,66 @@
+KOMBI DISPEČER — UI/UX REVIEW I V7 IZMENE
+Datum: 11.09.2026.
+
+OPŠTA OCENA PRE IZMENA
+Ideja i pokrivenost realnih problema: 8.5/10
+UI konzistentnost: 6.5/10
+UX za dispečera: 6.5/10
+Mobilni UX: 6/10
+Spremnost prototipa za testiranje sa prevoznikom: 7/10
+
+NAJVAŽNIJI PROBLEMI U STAROJ VERZIJI
+1. Funkcije su razbijene kroz više zasebnih HTML prototipova. Korisnik mora mentalno da spaja ture, vozila, rokove, servis, prijave i pouzdanost.
+2. Nema početnog operativnog pregleda: šta je hitno danas, ko čeka poziv, šta nije naplaćeno i da li je vozilo spremno.
+3. Putnici i paketi zavise od implicitno izabrane ture; kontekst nije dovoljno jak.
+4. Mobilni prikaz tabela skriva bitne kolone umesto da podatke pretvori u kartice.
+5. Touch zone na više mesta su male za rad jednom rukom na telefonu.
+6. Statusi postoje, ali nisu objedinjeni u sistem jasnih prioriteta i akcija.
+7. Glavne akcije su rasute: novi polazak, putnik, paket, vozilo, servis — nema jedinstvenog brzog unosa.
+8. Javna prijava je dobra idejno, ali tok nije dovoljno vođen; potvrda broja telefona treba da bude jasan korak.
+9. Prototip navodi da radi offline, ali stare verzije učitavaju Google fontove sa interneta.
+10. Datum i demo kontekst su na više mesta hardkodovani i međusobno neusklađeni.
+
+ŠTA JE PROMENJENO U V7
+- Jedna glavna aplikacija sa stabilnom navigacijom: Početna, Ture, Prijave, Putnici, Paketi, Vozila, Finansije.
+- Novi operativni dashboard sa 4 ključna KPI-ja i listom prioriteta.
+- Sledeća tura je odmah na vrhu, sa putnicima, paketima, naplatom i rutom.
+- Prijave sa sajta imaju brojčani badge i mogu da se potvrde/odbiju u prototipu.
+- Putnici i paketi imaju pretragu, jasniji kontekst ture i mobilne kartice.
+- Vozilo sada na jednoj kartici prikazuje kapacitet, dokumente, kilometražu i sledeći servis.
+- Blokirano vozilo je vizuelno jasno i razlog je odmah vidljiv.
+- Finansije imaju prihod, trošak, profit, profit po relaciji i nenaplaćena potraživanja.
+- Vozački prikaz je dostupan kao zaseban fokusirani modal, bez menadžerskog viška podataka.
+- Jedinstveno dugme "+ Novi unos" i specifične forme za putnika, paket, turu i vozilo.
+- Desktop koristi sidebar; mobilni koristi donju navigaciju sa velikim touch zonama.
+- Uklonjena zavisnost od Google Fonts — v7 radi stvarno offline.
+- Dodati focus state-ovi, veći touch targeti i bolja čitljivost statusa.
+- Nova javna prijava je mobile-first i ima 3 jasna koraka: izbor ture → podaci → potvrda broja.
+- Forma javne prijave ima osnovnu validaciju i demo SMS kod 1234.
+- Potvrda prijave jasno kaže da prijava nije isto što i konačna rezervacija i da se ništa ne plaća odmah.
+
+NAJVEĆI SLEDEĆI UX DOBICI ZA PRAVU APLIKACIJU
+1. Realno sortiranje stajanja po ruti i ETA prema adresama.
+2. Automatski Viber/SMS tok: prijava stigla, mesto potvrđeno, kombi se približava, vožnja završena.
+3. Prava istorija putnika koja se prikazuje diskretno uz prijavu, bez automatskog odbijanja.
+4. Konflikti vozila/vozača: aplikacija mora sprečiti dve ture istim vozilom ili vozačem u preklopljenom vremenu.
+5. Status naplate mora biti promenljiv jednim dodirom i imati audit trag ko ga je promenio.
+6. Za pakete dodati fotografiju paketa pri prijemu i potvrdu isporuke.
+7. Za dokumente i servis dodati vlasnikove pragove upozorenja i ponavljanje podsetnika.
+8. Dashboard treba da se puni stvarnim podacima, a ne da bude poseban modul koji dispečer mora ručno održavati.
+9. Uvesti role: vlasnik/dispečer/vozač. Vozač ne treba da vidi finansije firme ni sve putnike van svoje ture.
+10. Backup/export: dnevni PDF/CSV ili cloud backup zbog straha da se podaci ne izgube.
+
+PREDLOG ZA MVP REDOSLED
+P0: ture + putnici + prijave + vozila + vozački prikaz + naplata
+P1: paketi + dokumenti + servis + automatske poruke
+P2: finansijski pregled + analitika relacija + istorija pouzdanosti
+P3: GPS/ETA, napredna optimizacija rute i online plaćanje
+
+PROCENA V7 PROTOTIPA
+UI: 9.0/10
+UX za dispečera: 9.0/10
+Mobilni UX: 8.8/10
+Jasnoća prioriteta: 9.3/10
+Spremnost za testiranje sa realnim prevoznikom: 9.2/10
+
+Napomena: V7 je i dalje frontend prototip. Dugmad i demo interakcije služe za testiranje toka; nema baze, servera, stvarnog SMS/Viber slanja, autentikacije ili trajnog čuvanja podataka.
